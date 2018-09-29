@@ -1,10 +1,10 @@
 <template>
-    <div id="app">
-        <Navbar/>
+  <div id="app">
+    <Navbar/>
 
-        <router-view/>
-        <Footer/>
-    </div>
+    <router-view/>
+    <Footer/>
+  </div>
 
 </template>
 
@@ -14,11 +14,11 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 
 export default {
-    name: 'App',
-    components: {
-        Footer,
-        Navbar,
-    },
+  name: 'App',
+  components: {
+    Footer,
+    Navbar,
+  },
 };
 </script>
 <style lang="scss" scoped>

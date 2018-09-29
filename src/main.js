@@ -19,7 +19,7 @@ Vue.component('b-modal', bModal);
 Vue.directive('b-modal', bModalDirective);
 
 new Vue({
-    router,
-    store,
-    render: h => h(App),
+  router,
+  store,
+  render: h => h(App),
 }).$mount('#app');

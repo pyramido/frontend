@@ -8,28 +8,28 @@ import EventPage from './views/events/EventPage';
 Vue.use(Router);
 
 export default new Router({
-    routes: [
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: Home,
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About,
+    },
+    {
+      path: '/events',
+      name: 'events',
+      component: EventListing,
+      children: [
         {
-            path: '/',
-            name: 'home',
-            component: Home,
+          path: ':id',
+          name: 'event-page',
+          component: EventPage,
         },
-        {
-            path: '/about',
-            name: 'about',
-            component: About,
-        },
-        {
-            path: '/events',
-            name: 'events',
-            component: EventListing,
-            children: [
-                {
-                    path: ':id',
-                    name: 'event-page',
-                    component: EventPage,
-                },
-            ],
-        },
-    ],
+      ],
+    },
+  ],
 });
