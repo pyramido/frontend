@@ -1,11 +1,10 @@
 <template>
   <div id="app">
-    <Navbar/>
+    <Navbar />
 
-    <router-view/>
-    <Footer/>
+    <router-view />
+    <Footer />
   </div>
-
 </template>
 
 <script>
@@ -21,7 +20,3 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-@import 'assets/style/app.scss'
-
-</style>
