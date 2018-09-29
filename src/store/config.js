@@ -7,7 +7,7 @@ import api from './modules/api';
  */
 export default function getConfig(options) {
   return {
-    modules: { api },
+    modules: { ...api },
     strict: process.env.NODE_ENV !== 'production',
 
     ...options,

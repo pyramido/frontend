@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const http = axios.create({
-  baseURL: 'https//api.pyramido.ca/v1',
+  baseURL: 'https://api.pyramido.ca/v1',
 });
 
 /**
