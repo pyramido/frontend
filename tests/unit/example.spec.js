@@ -7,6 +7,6 @@ describe('Sample test', () => {
     const wrapper = shallowMount(HelloWorld, {
       propsData: { msg },
     });
-    expect("sample").toMatch("sample");
+    expect('sample').toMatch('sample');
   });
 });
