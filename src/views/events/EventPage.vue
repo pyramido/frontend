@@ -43,19 +43,19 @@
         </b-col>
         <b-col cols="6">
           <h2 align="center"> Nos besoins </h2>
-          <hr/>
+          <hr>
           <b-col cols="12">
             <h3>
               Besoins de ceci
             </h3>
             Nous recherchons ceci pour nous aider à cela
-            <br/> <br/>
+            <br> <br>
             <b-button size="lg" variant="primary"> Aider </b-button>
           </b-col>
         </b-col>
       </b-row>
     </b-container>
-    <br/>
+    <br>
   </div>
 </template>
 <script>

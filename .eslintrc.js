@@ -24,6 +24,7 @@ module.exports = {
   },
   // add your custom rules here
   rules: {
+    'max-len': 'off',
     'no-duplicate-imports': 'error',
     'no-implicit-globals': 'error',
     'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1 }],

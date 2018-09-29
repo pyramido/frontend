@@ -8,10 +8,15 @@
     <hr>
     <b-row>
       <b-col cols="2">
-        <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Rechercher un mot clé" />
+        <b-form-input size="sm"
+                      class="mr-sm-2"
+                      type="text"
+                      placeholder="Rechercher un mot clé" />
       </b-col>
       <b-col cols=1>
-        <b-button size="sm" class="my-2 my-sm-0" type="submit">Rechercher</b-button>
+        <b-button size="sm"
+                  class="my-2 my-sm-0"
+                  type="submit">Rechercher</b-button>
       </b-col>
       <b-col cols=2>
         <b-form-select v-model="selected"
@@ -20,7 +25,9 @@
       </b-col>
       <b-col cols="4">
         <label> Date </label>
-        <b-form-input class="form-search" type="date" style="width:80%" />
+        <b-form-input class="form-search"
+                      type="date"
+                      style="width:80%" />
       </b-col>
     </b-row>
     <hr>
@@ -68,13 +75,13 @@ export default {
       selected: null,
       categories: [
         { value: null, text: "Catégorie d'événement" },
-        { value: "Spectacle", text: "Spectacle" },
-        { value: "musique", text: "Musique" },
-        { value: "chant", text: "Chant" },
-        { value: "théâtre", text: "Théâtre" }
+        { value: 'Spectacle', text: 'Spectacle' },
+        { value: 'musique', text: 'Musique' },
+        { value: 'chant', text: 'Chant' },
+        { value: 'théâtre', text: 'Théâtre' },
       ],
     };
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>
