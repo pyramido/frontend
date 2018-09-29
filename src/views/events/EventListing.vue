@@ -78,8 +78,8 @@ export default {
           date: "2018-11-26",
           contact_email: null,
           medias: {
-            first: null
-          }
+            first: 'https://theatrelacbrome.ca/wp-content/uploads/2018/05/banniere4.jpg',
+          },
         },
         {
           id: 2,
