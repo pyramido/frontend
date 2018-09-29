@@ -11,8 +11,8 @@
         <b-collapse is-nav id="nav_collapse">
 
             <b-navbar-nav>
-                <b-nav-item href="#">A propos</b-nav-item>
-                <b-nav-item href="#">Evénements</b-nav-item>
+                <b-nav-item :to="{ name: 'about' }">A propos</b-nav-item>
+                <b-nav-item :to="{ name: 'events' }">Evénements</b-nav-item>
             </b-navbar-nav>
 
             <!-- Right aligned nav items -->
