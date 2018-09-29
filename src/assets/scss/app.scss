@@ -1,0 +1,18 @@
+$red-color: #C43945;
+$blue-color: #0795F0;
+$purple-color: #453A5E;
+$yellow-color: #FABB02;
+$orange-color: #E35D07;
+
+$primary-color: $red-color;
+$primary: $primary-color;
+$info: $purple-color;
+$footer-text-color: #ffffff;
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/dist/bootstrap-vue.css';
+
+footer {
+  color: $footer-text-color;
+  background-color: $primary-color;
+}
