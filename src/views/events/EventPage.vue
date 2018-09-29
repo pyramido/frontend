@@ -19,7 +19,7 @@
       <hr>
       <b-row>
         <b-col cols="6">
-          <h2 align="center"> Offres spéciales </h2>
+          <h2 align="center">Offres spéciales</h2>
           <b-col cols="12"
                  :key="item.id"
                  v-for="item in event.rewards">
@@ -74,44 +74,6 @@ export default {
   },
   beforeRouteUpdate(to, from, next) {
     this.fetchEvent(to.params.id);
-  },
-  data() {
-    return {
-      data: {
-        id: 12,
-        title: 'Total motivating extranet',
-        description:
-          'Aliquam temporibus natus inventore aspernatur voluptas quis est. Dolore expedita omnis veritatis ad sint. Qui reprehenderit ullam delectus sed officia. Nihil minus iusto inventore.\n\nNeque et quis magni error ut. Et qui mollitia tenetur quo vel qui sunt. Repudiandae facilis voluptates nam impedit nostrum expedita.\n\nSequi vero quam minima earum et corporis. Nemo distinctio nesciunt sit qui quia ipsum beatae quae. Consequatur sapiente ut eum aut optio pariatur.\n\nEarum laborum id recusandae libero ut corporis. Voluptate dolorem provident enim saepe vitae adipisci maiores beatae. Ut architecto dolores incidunt quaerat mollitia. Distinctio et et esse enim corrupti.\n\nNihil tenetur harum molestias laborum officiis rerum. Libero iure autem et. Sed ullam sit enim blanditiis. Saepe consequatur impedit explicabo.',
-        date: '2018-10-07',
-        contact_email: 'reed.hintz@example.com',
-        medias: {
-          first:
-            'https://theatrelacbrome.ca/wp-content/uploads/2018/05/banniere4.jpg',
-        },
-        rewards: [
-          {
-            id: 63,
-            title: 'Self-enabling solution-oriented instructionset',
-            description:
-              'Rerum quod neque ab quo quae. Voluptas quia praesentium expedita iure beatae unde. Nihil atque velit incidunt sed. Voluptates maiores aut repellendus aut aut eaque.\n\nUt et ea quis. Aut vel perferendis asperiores odit vel aut.',
-            bonus:
-              'Rerum quod neque ab quo quae. Voluptas quia praesentium expedita iure beatae unde. Nihil',
-          },
-          {
-            id: 64,
-            title: 'Self-enabling solution-oriented instructionset',
-            description:
-              'Rerum quod neque ab quo quae. Voluptas quia praesentium expedita iure beatae unde. Nihil atque velit incidunt sed. Voluptates maiores aut repellendus aut aut eaque.\n\nUt et ea quis. Aut vel perferendis asperiores odit vel aut.',
-          },
-        ],
-        author: {
-          id: 77,
-          first_name: 'Darlene',
-          last_name: 'Hessel',
-          avatar_url: 'https://lorempixel.com/300/300/?65786',
-        },
-      },
-    };
   },
 };
 </script>
