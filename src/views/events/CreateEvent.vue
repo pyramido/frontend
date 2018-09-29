@@ -1,5 +1,5 @@
 <template>
-  <div>about</div>
+  <div>event FORM</div>
 </template>
 <script>
 export default {
