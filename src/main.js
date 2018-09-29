@@ -15,6 +15,15 @@ Vue.use(BootstrapVue);
 // Components
 Vue.component('b-modal', bModal);
 Vue.directive('b-modal', bModalDirective);
+const filter = function filtrer(text, length, pClamp) {
+  const clamp = pClamp || '...';
+  const node = document.createElement('div');
+  node.innerHTML = text;
+  const content = node.textContent;
+  return content.length > length ? content.slice(0, length) + clamp : content;
+};
+
+Vue.filter('truncate', filter);
 
 new Vue({
   router,
