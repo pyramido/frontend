@@ -20,7 +20,9 @@ export default exportModule(NAMESPACE, {
   namespaced: true,
   state: () => ({
     currentEvent: null,
-    events: [],
+    events: {
+      data: [],
+    },
   }),
   getters,
   mutations,

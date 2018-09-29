@@ -1,5 +1,5 @@
-import { MUTATIONS, ACTIONS as t } from '@/store/modules/api/types';
 import { Events } from '@/api';
+import { MUTATIONS, ACTIONS as t } from './types';
 
 export default {
   [t.fetchEventList]({ commit }) {

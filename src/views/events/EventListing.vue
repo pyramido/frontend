@@ -2,7 +2,7 @@
   <b-container fluid>
     <b-row>
       <b-col align="center">
-        <h1> Les événements culturels à aider </h1>
+        <h1>Les événements culturels à aider</h1>
       </b-col>
     </b-row>
     <hr>
@@ -14,29 +14,24 @@
         <b-button size="sm" class="my-2 my-sm-0" type="submit">Rechercher</b-button>
       </b-col>
       <b-col cols=2>
-
-        <b-form-select v-model="selected" :options="categories" class="mb-3" />
+        <b-form-select v-model="selected"
+                       :options="categories"
+                       class="mb-3" />
       </b-col>
-
       <b-col cols="4">
         <label> Date </label>
         <b-form-input class="form-search" type="date" style="width:80%" />
       </b-col>
-
     </b-row>
     <hr>
     <b-row>
-
       <b-col cols="12"
              md="4"
              lg="3"
-             :key="item.id"
-             v-for="item in eventList">
-        <div>
-          <event-item v-bind="item" />
-        </div>
+             v-for="item in eventList"
+             :key="item.id">
+        <event-item v-bind="item" />
       </b-col>
-
     </b-row>
     <hr>
     <b-row>

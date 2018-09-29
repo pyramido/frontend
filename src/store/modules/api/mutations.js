@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { MUTATIONS as t } from '@/store/modules/api/types';
+import { MUTATIONS as t } from './types';
 
 /**
  * Mutations
