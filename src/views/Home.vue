@@ -1,6 +1,15 @@
 <template>
   <div id="home">
       <Carousel/>
+      <hr />
+      <div class="card" align="center">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <hr/>
       <b-container fluid>
         <b-row>
           <b-col align="center"><UseCaseCard title="Acteurs culturels"
@@ -18,6 +27,10 @@
 
         </b-row>
       </b-container>
+      <hr />
+
+      
+
   </div>
 </template>
 
