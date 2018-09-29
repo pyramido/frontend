@@ -48,7 +48,6 @@
           <b-btn>Suivant</b-btn>
         </b-button-group>
       </b-col>
-
     </b-row>
     <hr>
   </b-container>
