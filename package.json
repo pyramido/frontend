@@ -1,6 +1,7 @@
 {
   "name": "pyramido",
   "version": "0.1.0",
+  "homepage": "http://pyramido.ca/",
   "private": true,
   "scripts": {
     "start": "npm run serve",
