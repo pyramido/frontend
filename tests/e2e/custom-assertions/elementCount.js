@@ -6,14 +6,35 @@
 //
 // For more information on custom assertions see:
 // http://nightwatchjs.org/guide#writing-custom-assertions
-
+/*
 exports.assertion = function elementCount(selector, count) {
-  this.message = `Testing if element <${selector}> has count: ${count}`;
-  this.expected = count;
-  this.pass = val => val === count;
-  this.value = res => res.value;
-  function evaluator(_selector) {
-    return document.querySelectorAll(_selector).length;
-  }
-  this.command = cb => this.api.execute(evaluator, [selector], cb);
+    this.message = `Testing if element <${selector}> has count: ${count}`;
+    this.expected = count;
+    this.pass = val => val === count;
+    this.value = res => res.value;
+
+    function evaluator(_selector) {
+        return document.querySelectorAll(_selector).length;
+    }
+
+    this.command = cb => this.api.execute(evaluator, [selector], cb);
+};
+*/
+
+module.exports = {
+    'step one' : function (browser) {
+        browser
+            .url('http://www.google.com')
+            .waitForElementVisible('body', 1000)
+            .setValue('input[type=text]', 'nightwatch')
+            .waitForElementVisible('button[name=btnG]', 1000)
+    },
+
+    'step two' : function (browser) {
+        browser
+            .click('button[name=btnG]')
+            .pause(1000)
+            .assert.containsText('#main', 'Night Watch')
+            .end();
+    }
 };
