@@ -1,4 +1,4 @@
-<template>
+<template xmlns:>
   <div id="home">
     <Carousel/>
     <hr >
@@ -40,7 +40,7 @@
       </b-row>
     </b-container>
     <hr >
-
+    <div @click="checkLoginState">Facebook Login</div>
   </div>
 </template>
 
@@ -54,6 +54,14 @@ export default {
     Carousel,
     UseCaseCard,
   },
-
+  methods: {
+    checkLoginState() {
+      /* eslint-disable */
+      window.FB.login(function (response) {
+        // Todo: Call api.pyramido.ca/v1/auth/login with {token: response.authResponse.accessToken}
+        console.log(response);
+      }, { scope: 'public_profile,email' });
+    },
+  },
 };
 </script>
