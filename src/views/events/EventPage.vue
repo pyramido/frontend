@@ -57,7 +57,7 @@ export default {
     img() {
       const { event } = this;
       return event && event.media && event.media.first;
-    }
+    },
   },
   methods: helpers.mapActions([
     ACTIONS.fetchEvent,
@@ -65,7 +65,7 @@ export default {
   beforeRouteEnter(to, from, next) {
     next(vm => vm.fetchEvent());
   },
-  beforeRouteUpdate(to, from, next) {
+  beforeRouteUpdate(to) {
     this.fetchEvent(to.params.id);
   },
 };

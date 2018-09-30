@@ -2,7 +2,7 @@
   <div id="p-menu">
     <div class="container">
       <div class="p-logo">
-        <img src="/img/logo.png" />
+        <img src="/img/logo.png">
       </div>
       <div class="p-nav">
         <div class="top">
@@ -25,9 +25,9 @@
                   <path fill="#FFFFFF" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
                 </svg>
                 Créer un événement
-              </router-link></li>
+              </router-link>
+            </li>
           </ul>
-
         </div>
       </div>
     </div>
