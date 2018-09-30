@@ -1,4 +1,4 @@
-<template xmlns:>
+<template>
   <div id="home">
     <div class="p-slider">
       <div class="p-slide"></div>
