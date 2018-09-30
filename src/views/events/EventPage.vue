@@ -71,5 +71,7 @@ export default {
 };
 </script>
 <style>
+.event-img {
 
+}
 </style>
