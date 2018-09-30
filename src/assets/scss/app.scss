@@ -1,20 +1,24 @@
 $purple-color: #5c4988;
-$blue-color: #0795f0;
-$yellow-color: #fabb02;
-$orange-color: #e35d07;
+$blue-color: #0795F0;
+$yellow-color: #FABB02;
+$orange-color: #E35D07;
 
 $primary-color: $purple-color;
 $primary: $primary-color;
 $info: $purple-color;
 $footer-text-color: #ffffff;
 
-@import "~bootstrap/scss/bootstrap.scss";
-@import "~bootstrap-vue/dist/bootstrap-vue.css";
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/dist/bootstrap-vue.css';
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
 
 #p-menu {
   position: relative;
   padding: 2rem 0;
-  color: #fff;
+  color: #FFF;
   background: lighten($primary-color, 3%);
   box-shadow: 0 2px 6px 3px #574582;
 
@@ -46,15 +50,12 @@ $footer-text-color: #ffffff;
       }
     }
   }
-}
 
-#home {
-  font-family: "Source Sans Pro", sans-serif;
 }
 
 .p-cards {
-  padding: 2.5rem 0 5rem;
-  color: #fff;
+  padding: 2.5rem 0 3rem;
+  color: #FFF;
   background: $primary-color;
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23685498' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
 
@@ -67,20 +68,43 @@ $footer-text-color: #ffffff;
     }
 
     .right {
+      position: relative;
+
       p {
         font-size: 1.2rem;
         font-weight: 100;
       }
+
+      .mockup {
+        margin-top: 2rem;
+        position: relative;
+
+        img {
+          max-width: 100%;
+          position: absolute;
+          border: 1px solid #5c4988;
+          box-shadow: 12px 12px 0px rgba(199, 199, 199, 0.41);
+        }
+      }
     }
 
     .p-card {
-      img {
-        max-width: 100%;
+      margin: 2rem 0;
+
+      .p-left {
+        > div {
+          padding: 0.4rem;
+
+          img {
+            max-width: 100%;
+          }
+        }
       }
 
-      .col-md-8 {
-        margin: 2rem 0 0;
+      .p-right {
+        margin: 1rem 0 0;
         font-weight: 100;
+        padding-right: 2.5rem;
 
         h4 {
           font-weight: 100;
@@ -95,14 +119,22 @@ $footer-text-color: #ffffff;
 
   .p-items-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     .p-item {
-      flex: 1;
+      width: 48%;
+
+      &:first-of-type { padding-left: 0; }
+      &:last-of-type { padding-right: 0; }
 
       .p-thumbnail {
         position: relative;
         margin-bottom: 1rem;
-        background-size: 100%;
+
+        img {
+          max-width: 100%;
+        }
 
         .p-date {
           position: absolute;
