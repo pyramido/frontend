@@ -159,26 +159,36 @@ ul.p-ul-nav {
   }
 }
 
-.p-featured {
-  padding: 5rem 0;
-
+#home {
   .p-items-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
 
+  .p-item {
+    width: 48%;
+  }
+}
+
+.p-featured {
+  padding: 5rem 0;
+
+  .p-items-container {
     .p-item {
-      width: 48%;
-
       &:first-of-type { padding-left: 0; }
       &:last-of-type { padding-right: 0; }
 
       .p-thumbnail {
         position: relative;
         margin-bottom: 1rem;
+        background-size: cover;
 
         img {
+          opacity: 0;
+          min-width: 100%;
           max-width: 100%;
+          max-height: 255px;
         }
 
         .p-date {

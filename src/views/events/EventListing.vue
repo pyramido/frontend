@@ -3,14 +3,10 @@
     <div class="container">
       <h2>Les événements culturels</h2>
       <div class="form-inline">
-        <b-button size="sm"
-                  class="my-2 mr-sm-2"
-                  type="submit">Rechercher</b-button>
         <b-form-input size="sm"
                       type="text"
                       class="mr-sm-2"
                       placeholder="Rechercher un mot clé" />
-
         <b-form-select v-model="selected"
                        size="sm"
                        class="mr-sm-2"
@@ -18,8 +14,11 @@
         <b-form-input class="form-search mr-sm-2"
                       size="sm"
                       type="date" />
+        <b-button size="sm"
+                  class="my-2 mr-sm-2"
+                  type="submit">Rechercher</b-button>
       </div>
-      <b-row>
+      <b-row class="p-items-container">
         <b-col cols="12"
                md="4"
                lg="3"

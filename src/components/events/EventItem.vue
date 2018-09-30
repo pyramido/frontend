@@ -1,23 +1,15 @@
 <template>
-  <b-card :title="title"
-          :img-src="medias.first.url"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
+  <router-link :to="{ name: 'event-page', params: { id } }"
+               class="p-item">
+    <div class="p-thumbnail" :style="`background-image: url(${medias.first.url})`">
+      <img :src="medias.first.url">
+      <div class="p-date">{{ date }}</div>
+    </div>
+    <h4>{{ title }}</h4>
+    <p>
       {{ description | truncate(100, '...') }}
     </p>
-    <p>
-      Le {{ date }}
-    </p>
-    <b-button
-      :to="{ name: 'event-page', params: { id } }"
-      variant="primary">
-      En savoir plus
-    </b-button>
-  </b-card>
+  </router-link>
 </template>
 <script>
 export default {
