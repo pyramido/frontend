@@ -117,15 +117,5 @@
 </template>
 
 <script>
-import Carousel from '@/components/Carousel';
-import UseCaseCard from '@/components/UseCaseCard';
-
-export default {
-  name: 'Home',
-  components: {
-    Carousel,
-    UseCaseCard,
-  },
-
-};
+export default {};
 </script>
