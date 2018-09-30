@@ -1,48 +1,63 @@
 <template>
-  <div class="p-featured">
-    <div class="container">
-      <h1>{{ event.title }}</h1>
-      <hr>
-      <b-row>
-        <b-col>
-          <h2>L'événement</h2>
-          {{ event.description }}
-        </b-col>
-        <b-col align="center">
-          <img :src="img" class="event-img">
-        </b-col>
-      </b-row>
-      <hr>
-      <b-row>
-        <b-col cols="6">
-          <h2 align="center">Offres spéciales</h2>
-          <div :key="reward.id"
-               v-for="reward in event.rewards">
-            <hr>
-            <h3>
-              {{ reward.title }}
-            </h3>
-            <h4>Proposition</h4>
-            <p>{{ reward.description }}</p>
-            <h4> Les gains </h4>
-            <p>{{ reward.bonus }}</p>
+  <div>
+    <div class="p-event-container">
+      <div class="container">
+        <div class="p-event-header" :style="`background-image: url(/img/placeholders/i${img_index}.jpg)`">
+          <h1>{{ event.title }}</h1>
+        </div>
+      </div>
+    </div>
 
-            <b-button size="lg" variant="primary">Je participe</b-button>
-          </div>
-        </b-col>
-        <b-col cols="6">
-          <h2 align="center">Nos besoins</h2>
-          <div :key="need.id"
-               v-for="need in event.needs">
-            <hr>
-            <h3>
-              {{ need.title }}
-            </h3>
-            <p>{{ need.description }}</p>
-            <b-button size="lg" variant="secondary">Participer</b-button>
-          </div>
-        </b-col>
-      </b-row>
+    <div class="container">
+      <div class="p-event-details-container">
+        <b-row>
+          <b-col class="p-event-desc">
+            <h2>Description</h2>
+            <p v-html="event.description"/>
+          </b-col>
+          <b-col cols="4" class="p-event-rewards-needs">
+            <div>
+              <h2 align="center">Promotions</h2>
+              <div class="p-event-reward">
+                <h5>L'impliqué</h5>
+                <ul>
+                  <li>Devenez bénévole un soir</li>
+                  <li>Recevez une entrée gratuite le soir suivant</li>
+                </ul>
+                <b-button variant="primary">J'en profite</b-button>
+              </div>
+              <div class="p-event-reward">
+                <h5>Le social</h5>
+                <ul>
+                  <li>Invitez 5 amis</li>
+                  <li>Recevez une entrée gratuite</li>
+                </ul>
+                <b-button variant="primary">J'en profite</b-button>
+              </div>
+            </div>
+            <hr/>
+            <div>
+              <h2 align="center">Nos besoins</h2>
+              <div class="p-event-reward">
+                <h5>Impression</h5>
+                <ul>
+                  <li>Impression d'environ 200 billets</li>
+                  <li>Bannière type « roll-up »</li>
+                </ul>
+                <b-button variant="primary">Je peux aider</b-button>
+              </div>
+              <div class="p-event-reward">
+                <h5>Bénévoles</h5>
+                <ul>
+                  <li>Monter / démonter la salle</li>
+                  <li>Acceuillir les participants</li>
+                </ul>
+                <b-button variant="primary">Je peux aider</b-button>
+              </div>
+            </div>
+          </b-col>
+        </b-row>
+      </div>
     </div>
   </div>
 </template>
@@ -54,24 +69,25 @@ export default {
     ...helpers.mapGetters({
       event: GETTERS.currentEvent,
     }),
-    img() {
-      const { event } = this;
-      return event && event.media && event.media.first;
-    },
   },
   methods: helpers.mapActions([
     ACTIONS.fetchEvent,
   ]),
   beforeRouteEnter(to, from, next) {
-    next(vm => vm.fetchEvent());
+    next(vm => vm.fetchEvent(to.params.id));
   },
   beforeRouteUpdate(to) {
     this.fetchEvent(to.params.id);
   },
+  data() {
+    return {
+      img_index: Math.floor(Math.random() * 4) + 2,
+    };
+  },
 };
 </script>
 <style>
-.event-img {
+  .event-img {
 
-}
+  }
 </style>

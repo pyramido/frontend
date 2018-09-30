@@ -7,8 +7,4 @@ export default class EventResource extends Resource {
   }
 
   parse = ({ data }) => data;
-
-  fetch() {
-    return axios.get('https://api.pyramido.ca/v1/events');
-  }
 }
