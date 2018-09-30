@@ -1,7 +1,7 @@
 <template>
   <div class="p-featured">
     <div class="container">
-      <h2>Les événements culturels à aider</h2>
+      <h2>Les événements culturels</h2>
         <div class="form-inline">
         <b-button size="sm"
                   class="my-2 mr-sm-2"

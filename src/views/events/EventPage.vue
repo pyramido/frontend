@@ -1,11 +1,7 @@
 <template>
-  <div>
-    <b-container fluid>
-      <b-row>
-        <b-col align="center">
-          <h1>{{ event.title }}</h1>
-        </b-col>
-      </b-row>
+  <div class="p-featured">
+    <div class="container">
+      <h1>{{ event.title }}</h1>
       <hr>
       <b-row>
         <b-col>
@@ -13,44 +9,41 @@
           {{ event.description }}
         </b-col>
         <b-col align="center">
-          <img :src="img" style="max-width:100%">
+          <img :src="img" class="event-img">
         </b-col>
       </b-row>
       <hr>
       <b-row>
         <b-col cols="6">
           <h2 align="center">Offres spéciales</h2>
-          <b-col cols="12"
-                 :key="item.id"
-                 v-for="item in event.rewards">
+          <div :key="reward.id"
+               v-for="reward in event.rewards">
             <hr>
             <h3>
-              {{ item.title }}
+              {{ reward.title }}
             </h3>
             <h4>Proposition</h4>
-            {{ item.description }}
+            <p>{{ reward.description }}</p>
             <h4> Les gains </h4>
-            {{ item.bonus }}
-            <br>
-            <br>
-            <b-button size="lg" variant="primary">Participer</b-button>
-          </b-col>
+            <p>{{ reward.bonus }}</p>
+
+            <b-button size="lg" variant="primary">Je participe</b-button>
+          </div>
         </b-col>
         <b-col cols="6">
           <h2 align="center">Nos besoins</h2>
-          <hr>
-          <b-col cols="12">
+          <div :key="need.id"
+               v-for="need in event.needs">
+            <hr>
             <h3>
-              Besoins de ceci
+              {{ need.title }}
             </h3>
-            Nous recherchons ceci pour nous aider à cela
-            <br> <br>
-            <b-button size="lg" variant="primary">Aider</b-button>
-          </b-col>
+            <p>{{ need.description }}</p>
+            <b-button size="lg" variant="secondary">Participer</b-button>
+          </div>
         </b-col>
       </b-row>
-    </b-container>
-    <br>
+    </div>
   </div>
 </template>
 <script>
@@ -77,3 +70,6 @@ export default {
   },
 };
 </script>
+<style>
+
+</style>
