@@ -1,6 +1,6 @@
 <template>
   <b-card :title="title"
-          :img-src="img"
+          :img-src="media.first"
           img-alt="Image"
           img-top
           tag="article"
@@ -30,9 +30,9 @@ export default {
       type: String,
       default: 'Event',
     },
-    img: {
-      type: String,
-      default: null,
+    media: {
+      type: Object,
+      default: () => ({}),
     },
     description: {
       type: String,
