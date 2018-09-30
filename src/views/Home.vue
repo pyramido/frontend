@@ -66,48 +66,10 @@
         <div class="row">
           <div class="col-md-6">
             <h2>Événements en vedette</h2>
-
             <div class="p-items-container">
-              <div class="p-item">
-                <div class="p-thumbnail">
-                  <img src="https://placeimg.com/320/260/any?1"/>
-                  <div class="p-date">8 sept. 2018</div>
-                </div>
-                <h4>Un super titre</h4>
-                <p>
-                  Non quam nostram quidem, inquit Pomponius iocans; Hoc dixerit potius Ennius...
-                </p>
-              </div>
-              <div class="p-item">
-                <div class="p-thumbnail">
-                  <img src="https://placeimg.com/320/260/any?2"/>
-                  <div class="p-date">8 sept. 2018</div>
-                </div>
-                <h4>Un super titre</h4>
-                <p>
-                  Non quam nostram quidem, inquit Pomponius iocans; Hoc dixerit potius Ennius...
-                </p>
-              </div>
-              <div class="p-item">
-                <div class="p-thumbnail">
-                  <img src="https://placeimg.com/320/260/any?3"/>
-                  <div class="p-date">8 sept. 2018</div>
-                </div>
-                <h4>Un super titre</h4>
-                <p>
-                  Non quam nostram quidem, inquit Pomponius iocans; Hoc dixerit potius Ennius...
-                </p>
-              </div>
-              <div class="p-item">
-                <div class="p-thumbnail">
-                  <img src="https://placeimg.com/320/260/any?4"/>
-                  <div class="p-date">8 sept. 2018</div>
-                </div>
-                <h4>Un super titre</h4>
-                <p>
-                  Non quam nostram quidem, inquit Pomponius iocans; Hoc dixerit potius Ennius...
-                </p>
-              </div>
+              <event-item v-for="item in eventList.slice(0, 4)"
+                          :key="item.id"
+                          v-bind="item"/>
             </div>
           </div>
         </div>
@@ -117,5 +79,25 @@
 </template>
 
 <script>
-export default {};
+import { helpers, GETTERS, ACTIONS } from '@/store/modules/api/types';
+import EventItem from '@/components/events/EventItem';
+
+export default {
+  components: {
+    EventItem,
+  },
+  computed: helpers.mapGetters([GETTERS.eventList]),
+  methods: helpers.mapActions([ACTIONS.fetchEventList]),
+  beforeRouteEnter(to, from, next) {
+    next(vm => vm.fetchEventList()
+      .then(() => {
+        vm.loading = false;
+      }));
+  },
+  data() {
+    return {
+      loading: true,
+    };
+  },
+};
 </script>

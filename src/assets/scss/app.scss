@@ -184,6 +184,10 @@ ul.p-ul-nav {
       padding-right: 0;
     }
 
+    &:hover {
+      text-decoration: none;
+    }
+
     .p-thumbnail {
       position: relative;
       margin-bottom: 1rem;

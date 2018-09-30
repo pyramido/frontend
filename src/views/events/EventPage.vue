@@ -77,6 +77,7 @@ export default {
     next(vm => vm.fetchEvent(to.params.id));
   },
   beforeRouteUpdate(to) {
+    this.img_index = Math.floor(Math.random() * 4) + 2;
     this.fetchEvent(to.params.id);
   },
   data() {
