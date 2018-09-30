@@ -28,8 +28,11 @@
           <event-item v-bind="item" />
         </b-col>
       </b-row>
-      <b-alert :show="!eventList.length" variant="info">
+      <b-alert :show="!loading && !eventList.length" variant="info">
         Aucun événement.
+      </b-alert>
+      <b-alert :show="loading" variant="info">
+        Chargement en cours...
       </b-alert>
       <b-row>
         <b-col cols="12" align="center">
@@ -53,10 +56,13 @@ export default {
   computed: helpers.mapGetters([GETTERS.eventList]),
   methods: helpers.mapActions([ACTIONS.fetchEventList]),
   beforeRouteEnter(to, from, next) {
-    next(vm => vm.fetchEventList());
+    next(vm => vm.fetchEventList().then(() => {
+      vm.loading = false;
+    }));
   },
   data() {
     return {
+      loading: true,
       selected: null,
       categories: [
         { value: null, text: "Catégorie d'événement" },
